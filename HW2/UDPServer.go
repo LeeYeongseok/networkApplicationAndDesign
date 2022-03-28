@@ -5,7 +5,7 @@
 
 package main
 
-import ("bytes"; "fmt"; "net" ; "strings" ; "strconv" ; "time" ; "os" ; "os/signal" ; "syscall")
+import ("bytes"; "fmt"; "net" ; "strings" ; "time" ; "os" ; "os/signal" ; "syscall")
 
 func main() {
   startTime := time.Now()
@@ -57,7 +57,7 @@ func main() {
       pconn.WriteTo([]byte(reply),r_addr)
       countCommand += 1
     } else if string(buffer[0:1]) == "3"{
-      pconn.WriteTo([]byte("requests served = "+strconv.Itoa(countCommand)+"\n"),r_addr)
+      pconn.WriteTo([]byte("requests served = "+fmt.Sprintf("%02d", countCommand)+"\n"),r_addr)
       fmt.Printf("Command 3\n")
       countCommand += 1
     } else if string(buffer[0:1]) == "4"{

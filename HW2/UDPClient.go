@@ -9,7 +9,7 @@ import ("bufio"; "fmt"; "net"; "os" ; "time" ; "os/signal" ; "syscall" )
 
 // 소수점 셋째자리까지 잘라서 문자열로 반환
 func cutFloat(num float64) string{
-  return fmt.Sprintf("%.3f",num)
+  return fmt.Sprintf("%06.3f",num)
 }
 
 // 서버에 에러가 있으면 알리고 close 및 종료
